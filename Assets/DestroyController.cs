@@ -24,18 +24,18 @@ public class DestroyController : MonoBehaviour
     {
         //Unityちゃんのオブジェクトを取得
         this.unitychan = GameObject.Find("unitychan");
-
-        //Unityちゃんとオブジェクトの距離を求める
-        this.difference = this.unitychan.transform.position.z - this.transform.position.z;
-
         
     }
 
     // Update is called once per frame
     void Update()
-    {   
+    {
+
+        //Unityちゃんとオブジェクトの距離を求める
+        this.difference = this.unitychan.transform.position.z - this.transform.position.z;
+
         // 画面外に出たら破棄する
-        if (this.difference > 1)
+        if (this.difference > 5)
         {
             Destroy(gameObject);
         }
